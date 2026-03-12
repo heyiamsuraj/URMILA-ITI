@@ -444,6 +444,23 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                   ))}
                   <button type="button" onClick={() => addArrayItem('footerOtherLinks', { text: '', url: '' })} className="flex items-center gap-2 text-sm text-red-600 hover:text-red-700 font-medium mt-2"><Plus size={16} /> Add Link</button>
                 </div>
+                <div className="pt-4 border-t border-gray-200">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Social Media Links</label>
+                  {(formData.socialLinks as any[] || []).map((item, index) => (
+                    <div key={index} className="flex gap-2 mb-2">
+                      <select value={item.platform} onChange={(e) => handleObjectArrayChange('socialLinks', index, 'platform', e.target.value)} className="w-1/3 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white">
+                        <option value="facebook">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="youtube">YouTube</option>
+                      </select>
+                      <input type="text" value={item.url} onChange={(e) => handleObjectArrayChange('socialLinks', index, 'url', e.target.value)} placeholder="URL (e.g., https://...)" className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+                      <button type="button" onClick={() => removeArrayItem('socialLinks', index)} className="p-2 text-red-500 hover:bg-red-50 rounded-md"><Trash2 size={20} /></button>
+                    </div>
+                  ))}
+                  <button type="button" onClick={() => addArrayItem('socialLinks', { platform: 'facebook', url: '' })} className="flex items-center gap-2 text-sm text-red-600 hover:text-red-700 font-medium mt-2"><Plus size={16} /> Add Social Link</button>
+                </div>
               </div>
             )}
 

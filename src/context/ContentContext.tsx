@@ -8,6 +8,7 @@ export interface AppContent {
   navLogo: string;
   footerLogo: string;
   footerOtherLinks: { text: string; url: string }[];
+  socialLinks: { platform: string; url: string }[];
 
   heroImages: string[];
   heroTitle: string;

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, MapPin, Phone, Mail, Link as LinkIcon } from 'lucide-react';
 import { useContent } from '../context/ContentContext';
 
 export default function Footer() {
@@ -22,19 +22,22 @@ export default function Footer() {
             <p className="text-gray-400 leading-relaxed text-sm">
               Empowering youth with quality vocational training in the Electrician trade since 2010. Building skills for a brighter future.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="bg-yellow-900 hover:bg-red-500 p-2 rounded-full transition-colors text-white">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-yellow-900 hover:bg-red-500 p-2 rounded-full transition-colors text-white">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="bg-yellow-900 hover:bg-red-500 p-2 rounded-full transition-colors text-white">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-yellow-900 hover:bg-red-500 p-2 rounded-full transition-colors text-white">
-                <Linkedin size={20} />
-              </a>
+            <div className="flex gap-4 flex-wrap">
+              {content?.socialLinks?.map((link, index) => {
+                let Icon = LinkIcon;
+                const platform = link.platform.toLowerCase();
+                if (platform === 'facebook') Icon = Facebook;
+                else if (platform === 'twitter') Icon = Twitter;
+                else if (platform === 'instagram') Icon = Instagram;
+                else if (platform === 'linkedin') Icon = Linkedin;
+                else if (platform === 'youtube') Icon = Youtube;
+
+                return (
+                  <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="bg-yellow-900 hover:bg-red-500 p-2 rounded-full transition-colors text-white">
+                    <Icon size={20} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
