@@ -250,7 +250,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                   <textarea name="coursesDescription" value={formData.coursesDescription || ''} onChange={handleChange} rows={2} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Key Topics Covered</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Future Opportunities</label>
                   {(formData.coursesList as string[] || []).map((topic, index) => (
                     <div key={index} className="flex gap-2 mb-2">
                       <input type="text" value={topic} onChange={(e) => handleArrayChange('coursesList', index, e.target.value)} className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />

@@ -62,7 +62,7 @@ export default function Courses() {
 
                 <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <Wrench size={20} className="text-red-500" />
-                  Key Topics Covered:
+                  Future Opportunities:
                 </h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                   {topics.map((topic, index) => (
