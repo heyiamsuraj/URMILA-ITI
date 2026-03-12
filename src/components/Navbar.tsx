@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +13,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const changeLanguage = (langCode: string) => {
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (select) {
+      select.value = langCode;
+      select.dispatchEvent(new Event('change'));
+    }
+  };
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Notice', href: '#notice' },
@@ -21,7 +29,6 @@ export default function Navbar() {
     { name: 'Facilities', href: '#facilities' },
     { name: 'Admission', href: '#admission' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -59,12 +66,31 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-md font-medium transition-colors"
-            >
-              Enquire Now
-            </a>
+            
+            <div className="flex items-center gap-3 border-l border-red-900/20 pl-6">
+              <button
+                onClick={() => changeLanguage('hi')}
+                className="flex items-center gap-1 text-red-900 hover:text-red-600 font-medium transition-colors"
+                title="Translate to Hindi"
+              >
+                <Languages size={20} />
+                <span className="text-sm">HI</span>
+              </button>
+              <button
+                onClick={() => changeLanguage('en')}
+                className="flex items-center gap-1 text-red-900 hover:text-red-600 font-medium transition-colors"
+                title="Translate to English"
+              >
+                <span className="text-sm">EN</span>
+              </button>
+
+              <a
+                href="#contact"
+                className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-md font-medium transition-colors ml-2"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,24 +107,40 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-yellow-50 shadow-lg absolute w-full left-0 top-full">
+        <div className="md:hidden bg-yellow-50 dark:bg-gray-800 shadow-lg absolute w-full left-0 top-full">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-red-600 hover:bg-yellow-100 rounded-md"
+                className="block px-3 py-2 text-base font-medium text-gray-800 dark:text-gray-200 hover:text-red-600 hover:bg-yellow-100 dark:hover:bg-gray-700 rounded-md"
               >
                 {link.name}
               </a>
             ))}
+            
+            <div className="flex items-center justify-around py-4 border-t border-gray-200 dark:border-gray-700 mt-4">
+              <button
+                onClick={() => { changeLanguage('hi'); setIsMobileMenuOpen(false); }}
+                className="flex items-center gap-2 text-gray-800 dark:text-gray-200 font-medium"
+              >
+                <Languages size={20} /> Hindi
+              </button>
+              <button
+                onClick={() => { changeLanguage('en'); setIsMobileMenuOpen(false); }}
+                className="flex items-center gap-2 text-gray-800 dark:text-gray-200 font-medium"
+              >
+                <Languages size={20} /> English
+              </button>
+            </div>
+
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full text-center mt-4 bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-md font-medium transition-colors"
             >
-              Enquire Now
+              Contact Us
             </a>
           </div>
         </div>

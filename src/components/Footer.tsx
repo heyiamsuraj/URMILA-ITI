@@ -5,7 +5,7 @@ export default function Footer() {
   const { content } = useContent();
 
   return (
-    <footer className="bg-yellow-950 text-white pt-16 pb-8 border-t-4 border-red-500">
+    <footer className="bg-yellow-950 text-white pt-16 pb-8 border-t-4 border-red-500 isolate-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Brand & About */}

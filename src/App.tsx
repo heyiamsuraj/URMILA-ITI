@@ -16,13 +16,14 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminPanel from './components/AdminPanel';
 import { ContentProvider } from './context/ContentContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Settings } from 'lucide-react';
 
 function AppContent() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-yellow-50 font-sans scroll-smooth relative">
+    <div className="min-h-screen bg-yellow-50 dark:bg-gray-900 font-sans scroll-smooth relative transition-colors duration-300">
       <Navbar />
       <main>
         <Hero />
@@ -53,8 +54,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ContentProvider>
-      <AppContent />
-    </ContentProvider>
+    <ThemeProvider>
+      <ContentProvider>
+        <AppContent />
+      </ContentProvider>
+    </ThemeProvider>
   );
 }

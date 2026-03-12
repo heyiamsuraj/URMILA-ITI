@@ -38,3 +38,35 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Hide Google Translate Banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+/* Dark Mode Invert Filter */
+html.dark {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #111;
+}
+
+html.dark img,
+html.dark video,
+html.dark iframe,
+html.dark .isolate-dark {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Fix for isolate-dark images */
+html.dark .isolate-dark img {
+  filter: none;
+}

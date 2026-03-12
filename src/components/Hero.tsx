@@ -19,7 +19,7 @@ export default function Hero() {
   }, [backgroundImages.length]);
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden isolate-dark">
       {/* Background Images with Overlay */}
       <div className="absolute inset-0 z-0 bg-black">
         {backgroundImages.map((img, index) => (
