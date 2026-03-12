@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Notice from './components/Notice';
 import About from './components/About';
+import Affiliations from './components/Affiliations';
 import Courses from './components/Courses';
 import Facilities from './components/Facilities';
 import Admission from './components/Admission';
@@ -29,6 +30,7 @@ function AppContent() {
         <Hero />
         <Notice />
         <About />
+        <Affiliations />
         <Courses />
         <Facilities />
         <Admission />

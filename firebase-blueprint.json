@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "AppContent": {
+      "title": "AppContent",
+      "description": "The main content configuration for the website.",
+      "type": "object",
+      "properties": {
+        "heroImages": { "type": "array", "items": { "type": "string" } },
+        "heroTitle": { "type": "string" },
+        "heroSubtitle": { "type": "string" },
+        "heroDescription": { "type": "string" },
+        "aboutText": { "type": "string" },
+        "aboutMission": { "type": "string" },
+        "aboutVision": { "type": "string" },
+        "coursesTitle": { "type": "string" },
+        "coursesDescription": { "type": "string" },
+        "coursesList": { "type": "array", "items": { "type": "string" } },
+        "facilitiesTitle": { "type": "string" },
+        "facilitiesDescription": { "type": "string" },
+        "facilitiesList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "admissionTitle": { "type": "string" },
+        "admissionDescription": { "type": "string" },
+        "admissionEligibility": { "type": "array", "items": { "type": "string" } },
+        "admissionDocuments": { "type": "array", "items": { "type": "string" } },
+        "galleryImages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": { "type": "string" },
+              "caption": { "type": "string" }
+            }
+          }
+        },
+        "noticesTitle": { "type": "string" },
+        "noticesDescription": { "type": "string" },
+        "noticesList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "date": { "type": "string" },
+              "link": { "type": "string" },
+              "isNew": { "type": "boolean" }
+            }
+          }
+        },
+        "contactEmail": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "contactAddress": { "type": "string" },
+        "affiliationsTitle": { "type": "string" },
+        "affiliationsDescription": { "type": "string" },
+        "affiliationsLogos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": { "type": "string" },
+              "name": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/settings/content": {
+      "schema": { "$ref": "AppContent" },
+      "description": "The global website content settings."
+    }
+  }
+}

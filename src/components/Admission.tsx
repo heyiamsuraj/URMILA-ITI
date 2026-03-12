@@ -77,6 +77,25 @@ export default function Admission() {
             </div>
           </div>
         </div>
+
+        {/* Admission Benefits */}
+        {(content?.admissionBenefits && content.admissionBenefits.length > 0) && (
+          <div className="mt-16 bg-white p-8 rounded-3xl shadow-sm border border-yellow-100">
+            <h3 className="text-2xl font-bold text-yellow-900 mb-6 text-center">
+              Admission Benefits
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {content.admissionBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-4 bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
+                  <div className="bg-white p-3 rounded-full shadow-sm">
+                    <CheckSquare size={24} className="text-red-500" />
+                  </div>
+                  <span className="text-lg font-bold text-yellow-900">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

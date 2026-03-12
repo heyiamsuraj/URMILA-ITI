@@ -7,12 +7,12 @@ export default function Footer() {
   return (
     <footer className="bg-yellow-950 text-white pt-16 pb-8 border-t-4 border-red-500 isolate-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & About */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <img 
-                src="https://i.postimg.cc/hPdj7kxS/Gemini-Generated-Image-o8lg4ko8lg4ko8lg-removebg-preview-Picsart-Ai-Image-Enhancer.png" 
+                src={content?.footerLogo || "https://i.postimg.cc/YCRj6Nvv/Gemini-Generated-Image-rw1scmrw1scmrw1s-removebg-preview.png"} 
                 alt="Urmila ITI Logo" 
                 className="h-12 w-auto bg-white rounded-full p-1" 
                 referrerPolicy="no-referrer"
@@ -56,12 +56,33 @@ export default function Footer() {
                     href={link.href}
                     className="text-gray-400 hover:text-red-500 transition-colors flex items-center gap-2 text-sm"
                   >
-                    <span className="text-red-500 text-xs">â–¸</span> {link.name}
+                    <span className="text-red-500 text-xs">▸</span> {link.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Other Links */}
+          {content?.footerOtherLinks && content.footerOtherLinks.length > 0 && (
+            <div>
+              <h4 className="text-lg font-bold mb-6 text-white border-b border-yellow-800 pb-2 inline-block">Other Links</h4>
+              <ul className="space-y-3">
+                {content.footerOtherLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-red-500 transition-colors flex items-center gap-2 text-sm"
+                    >
+                      <span className="text-red-500 text-xs">▸</span> {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Contact Info */}
           <div>

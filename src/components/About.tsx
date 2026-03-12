@@ -40,7 +40,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-gray-900">
-              Empowering Youth Through Skill-Based Training Since 2010
+              {content?.aboutTitle || 'Empowering Youth Through Skill-Based Training Since 2010'}
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed whitespace-pre-wrap">
               {content?.aboutText || 'Welcome to Urmila Industrial Training Institute (ITI). We are dedicated to providing high-quality vocational training in the Electrician trade. Our goal is to bridge the gap between industry requirements and the skills possessed by the youth.'}

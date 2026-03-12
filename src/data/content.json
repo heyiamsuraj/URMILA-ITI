@@ -1,0 +1,89 @@
+{
+  "navLogo": "https://i.postimg.cc/YCRj6Nvv/Gemini-Generated-Image-rw1scmrw1scmrw1s-removebg-preview.png",
+  "footerLogo": "https://i.postimg.cc/YCRj6Nvv/Gemini-Generated-Image-rw1scmrw1scmrw1s-removebg-preview.png",
+  "footerOtherLinks": [
+    { "text": "Privacy Policy", "url": "#" },
+    { "text": "Terms of Service", "url": "#" }
+  ],
+  "heroImages": [
+    "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
+  ],
+  "heroTitle": "Welcome to Urmila ITI",
+  "heroSubtitle": "Quality Training for Future Electricians",
+  "heroDescription": "Empowering students with practical skills and industry-relevant knowledge since 2010. Join us to build a bright career in the electrical trade.",
+  "aboutTitle": "About Us",
+  "aboutText": "Welcome to Urmila Industrial Training Institute (ITI). We are dedicated to providing high-quality vocational training in the Electrician trade. Our goal is to bridge the gap between industry requirements and the skills possessed by the youth.",
+  "aboutMission": "To impart quality technical education and practical skills, enabling students to become self-reliant and successful professionals in the electrical industry.",
+  "aboutVision": "To be a premier institute of excellence in vocational training, recognized for producing highly skilled and ethical technicians.",
+  "coursesTitle": "Our Courses",
+  "coursesDescription": "Our comprehensive Electrician Trade program equips students with the practical and theoretical knowledge required to excel in the electrical industry. Learn from experts in modern, well-equipped labs.",
+  "coursesList": [
+    "Electrical Wiring",
+    "Motor Control",
+    "Safety Procedures",
+    "Equipment Maintenance",
+    "Industrial Automation Basics",
+    "Troubleshooting"
+  ],
+  "facilitiesTitle": "Our Facilities",
+  "facilitiesDescription": "We provide a conducive environment for learning with top-notch infrastructure and resources.",
+  "facilitiesList": [
+    { "title": "Modern Electrical Lab", "description": "State-of-the-art laboratories equipped with the latest electrical panels and testing instruments." },
+    { "title": "Skilled Instructors", "description": "Learn from highly qualified and experienced faculty members dedicated to student success." },
+    { "title": "Workshop Training", "description": "Extensive hands-on workshop sessions to build practical competence and confidence." },
+    { "title": "Tools & Equipment", "description": "Access to a wide range of modern tools, machinery, and safety gear for comprehensive learning." },
+    { "title": "Placement Assistance", "description": "Dedicated placement cell to assist students with internships and job opportunities post-training." }
+  ],
+  "admissionTitle": "Admission Process",
+  "admissionDescription": "Start your journey towards a rewarding career in the electrical trade.",
+  "admissionBenefits": [
+    "Bihar Student Credit Card (BSCC) option available.",
+    "Scholarships available."
+  ],
+  "admissionEligibility": [
+    "Passed 10th class examination under 10+2 system of education with Science and Mathematics or its equivalent.",
+    "Minimum age limit is 14 years as on the first day of the academic session.",
+    "Physically fit for the trade as per medical standards."
+  ],
+  "admissionDocuments": [
+    "10th Marksheet & Certificate",
+    "Transfer Certificate (TC)",
+    "Aadhar Card Copy",
+    "Passport Size Photographs (5)",
+    "Caste Certificate (if applicable)",
+    "Income Certificate",
+    "Medical Fitness Certificate",
+    "Domicile Certificate"
+  ],
+  "galleryTitle": "Our Gallery",
+  "galleryDescription": "Glimpses of our campus, labs, and student activities.",
+  "galleryImages": [
+    { "src": "https://picsum.photos/seed/electrical-workshop/600/400", "caption": "Electrical Workshop Training" },
+    { "src": "https://picsum.photos/seed/students-panels/600/400", "caption": "Students Working on Panels" },
+    { "src": "https://picsum.photos/seed/classroom/600/400", "caption": "Interactive Classroom Sessions" },
+    { "src": "https://picsum.photos/seed/practical-lab/600/400", "caption": "Hands-on Practical Lab Work" },
+    { "src": "https://picsum.photos/seed/motor-winding/600/400", "caption": "Motor Winding Practice" },
+    { "src": "https://picsum.photos/seed/safety-drill/600/400", "caption": "Electrical Safety Drills" }
+  ],
+  "noticesTitle": "Notice Board",
+  "noticesDescription": "Stay updated with the latest announcements, exam schedules, and important circulars.",
+  "noticesList": [
+    { "title": "Admission Open for Session 2026-28", "date": "2026-03-01", "link": "#", "isNew": true },
+    { "title": "Semester 2 Examination Schedule", "date": "2026-02-15", "link": "#", "isNew": false },
+    { "title": "Holiday Notice: Holi Festival", "date": "2026-02-28", "link": "#", "isNew": true }
+  ],
+  "contactTitle": "Contact Us",
+  "contactDescription": "Get in touch with us for any queries or information.",
+  "contactEmail": "urmilaiti@gmail.com",
+  "contactPhone": "+91 9334204813\n+91 9934276059",
+  "contactAddress": "Urmila ITI, East Ram Krishna Nagar,\nP.O. New Jaganpura, New Bypass Patna, Bihar -800027",
+  "affiliationsTitle": "Our Affiliations & Partners",
+  "affiliationsDescription": "We are proud to be affiliated with and recognized by leading organizations in the vocational training sector.",
+  "affiliationsLogos": [
+    { "src": "https://i.postimg.cc/hPdj7kxS/Gemini-Generated-Image-o8lg4ko8lg4ko8lg-removebg-preview-Picsart-Ai-Image-Enhancer.png", "name": "NCVT" },
+    { "src": "https://i.postimg.cc/hPdj7kxS/Gemini-Generated-Image-o8lg4ko8lg4ko8lg-removebg-preview-Picsart-Ai-Image-Enhancer.png", "name": "DGT" },
+    { "src": "https://i.postimg.cc/hPdj7kxS/Gemini-Generated-Image-o8lg4ko8lg4ko8lg-removebg-preview-Picsart-Ai-Image-Enhancer.png", "name": "Skill India" }
+  ]
+}

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Languages } from 'lucide-react';
+import { useContent } from '../context/ContentContext';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { content } = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <a href="#home" className="flex items-center gap-2">
               <img 
-                src="https://i.postimg.cc/hPdj7kxS/Gemini-Generated-Image-o8lg4ko8lg4ko8lg-removebg-preview-Picsart-Ai-Image-Enhancer.png" 
+                src={content?.navLogo || "https://i.postimg.cc/YCRj6Nvv/Gemini-Generated-Image-rw1scmrw1scmrw1s-removebg-preview.png"} 
                 alt="Urmila ITI Logo" 
                 className="h-12 w-auto bg-white rounded-full p-1" 
                 referrerPolicy="no-referrer"
