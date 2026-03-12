@@ -3,6 +3,8 @@ import { createServer as createViteServer } from 'vite';
 import Database from 'better-sqlite3';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import nodemailer from 'nodemailer';
+import twilio from 'twilio';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -102,6 +104,57 @@ for (const [key, value] of Object.entries(defaultContent)) {
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Urmila_admin_135';
 const ADMIN_TOKEN = 'admin-session-token-12345'; // Simple static token for prototype
 
+// Email Transporter Setup
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: process.env.SMTP_PORT === '465',
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+// Twilio Setup
+const twilioClient = process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN
+  ? twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
+  : null;
+
+async function sendLoginNotifications() {
+  // Send Email
+  if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    try {
+      await transporter.sendMail({
+        from: process.env.SMTP_USER,
+        to: 'urmilaiti@gmail.com',
+        subject: 'Admin Dashboard Login Alert',
+        text: 'Someone has logged in to Admin Dashboard',
+      });
+      console.log('Login alert email sent successfully.');
+    } catch (error) {
+      console.error('Failed to send login alert email:', error);
+    }
+  } else {
+    console.log('Email credentials not configured. Skipping email alert.');
+  }
+
+  // Send SMS
+  if (twilioClient && process.env.TWILIO_PHONE_NUMBER) {
+    try {
+      await twilioClient.messages.create({
+        body: 'Someone has logged in to Admin Dashboard',
+        from: process.env.TWILIO_PHONE_NUMBER,
+        to: '+919334204813'
+      });
+      console.log('Login alert SMS sent successfully.');
+    } catch (error) {
+      console.error('Failed to send login alert SMS:', error);
+    }
+  } else {
+    console.log('Twilio credentials not configured. Skipping SMS alert.');
+  }
+}
+
 async function startServer() {
   const app = express();
   const PORT = 3000;
@@ -112,6 +165,9 @@ async function startServer() {
   app.post('/api/login', (req, res) => {
     const { password } = req.body;
     if (password === ADMIN_PASSWORD) {
+      // Trigger notifications asynchronously
+      sendLoginNotifications().catch(console.error);
+      
       res.json({ success: true, token: ADMIN_TOKEN });
     } else {
       res.status(401).json({ success: false, message: 'Invalid password' });

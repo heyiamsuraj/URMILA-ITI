@@ -60,10 +60,10 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#admission"
+              href="#contact"
               className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-md font-medium transition-colors"
             >
-              Apply Now
+              Enquire Now
             </a>
           </div>
 
@@ -94,11 +94,11 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#admission"
+              href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full text-center mt-4 bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-md font-medium transition-colors"
             >
-              Apply Now
+              Enquire Now
             </a>
           </div>
         </div>
