@@ -55,7 +55,7 @@ export default function Gallery() {
               className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
             >
               <img
-                src={image.src}
+                src={image.src || undefined}
                 alt={image.caption}
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 referrerPolicy="no-referrer"

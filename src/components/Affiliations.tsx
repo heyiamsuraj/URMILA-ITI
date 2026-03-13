@@ -28,7 +28,7 @@ export default function Affiliations() {
             <div key={index} className="flex flex-col items-center group">
               <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full shadow-md border border-gray-100 flex items-center justify-center p-4 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-xl">
                 <img 
-                  src={logo.src} 
+                  src={logo.src || undefined} 
                   alt={logo.name} 
                   className="max-w-full max-h-full object-contain"
                   referrerPolicy="no-referrer"

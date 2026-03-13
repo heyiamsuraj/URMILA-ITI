@@ -25,7 +25,7 @@ export default function Hero() {
         {backgroundImages.map((img, index) => (
           <img
             key={`${img}-${index}`}
-            src={img}
+            src={img || undefined}
             alt={`Electrician Training ${index + 1}`}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
               index === currentImageIndex ? 'opacity-100' : 'opacity-0'

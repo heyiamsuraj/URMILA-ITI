@@ -400,7 +400,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                   {(formData.galleryImages as any[] || []).map((item, index) => (
                     <div key={index} className="flex flex-col gap-2 p-4 border border-gray-200 rounded-lg bg-gray-50 relative">
                       <button type="button" onClick={() => removeArrayItem('galleryImages', index)} className="absolute top-2 right-2 p-1 bg-white text-red-500 hover:bg-red-100 rounded-md shadow-sm"><Trash2 size={16} /></button>
-                      <img src={item.src} alt="Preview" className="w-full h-32 object-cover rounded-md bg-gray-200" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/600x400?text=Invalid+Image+URL'} />
+                      <img src={item.src || undefined} alt="Preview" className="w-full h-32 object-cover rounded-md bg-gray-200" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/600x400?text=Invalid+Image+URL'} />
                       <input type="text" value={item.src} onChange={(e) => handleObjectArrayChange('galleryImages', index, 'src', e.target.value)} placeholder="Image URL" className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />
                       <input type="text" value={item.caption} onChange={(e) => handleObjectArrayChange('galleryImages', index, 'caption', e.target.value)} placeholder="Caption" className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />
                     </div>
@@ -481,7 +481,7 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
                     {(formData.affiliationsLogos as any[] || []).map((item, index) => (
                       <div key={index} className="flex flex-col gap-2 p-4 border border-gray-200 rounded-lg bg-gray-50 relative">
                         <button type="button" onClick={() => removeArrayItem('affiliationsLogos', index)} className="absolute top-2 right-2 p-1 bg-white text-red-500 hover:bg-red-100 rounded-md shadow-sm"><Trash2 size={16} /></button>
-                        <img src={item.src} alt="Preview" className="w-full h-32 object-contain rounded-md bg-white border border-gray-200 p-2" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/150?text=Logo'} />
+                        <img src={item.src || undefined} alt="Preview" className="w-full h-32 object-contain rounded-md bg-white border border-gray-200 p-2" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/150?text=Logo'} />
                         <input type="text" value={item.src} onChange={(e) => handleObjectArrayChange('affiliationsLogos', index, 'src', e.target.value)} placeholder="Logo URL" className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />
                         <input type="text" value={item.name} onChange={(e) => handleObjectArrayChange('affiliationsLogos', index, 'name', e.target.value)} placeholder="Organization Name" className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500" />
                       </div>
