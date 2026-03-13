@@ -13,7 +13,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || savedTheme === 'light') return savedTheme;
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
     return 'light';
   });
 
