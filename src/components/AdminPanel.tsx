@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useContent } from '../context/ContentContext';
-import { X, Save, Plus, Trash2, LogOut, Lock } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+import { X, Save, Plus, Trash2, LogOut, Lock, Sun, Moon } from 'lucide-react';
 
 export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const { content, updateContent, isAuthenticated, login, logout } = useContent();
@@ -13,6 +14,9 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+
+  const { theme, toggleTheme } = useTheme();
+  const isDarkMode = theme === 'dark';
 
   if (!content) return null;
 
@@ -173,6 +177,14 @@ export default function AdminPanel({ onClose }: { onClose: () => void }) {
         <div className="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center shadow-sm z-10">
           <h3 className="text-lg font-semibold text-gray-800">{tabs.find(t => t.id === activeTab)?.label} Settings</h3>
           <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
+              title={isDarkMode ? "Switch to Bright Mode" : "Switch to Dark Mode"}
+            >
+              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <button type="button" onClick={onClose} className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
               Close Dashboard
             </button>
